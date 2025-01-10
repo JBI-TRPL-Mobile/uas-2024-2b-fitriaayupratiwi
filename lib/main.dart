@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:template_project/screens/dashbord_screen.dart';
 import 'package:template_project/screens/signup_screen.dart';
 import 'package:template_project/screens/welcome_screen.dart';
 import 'package:template_project/screens/signin_screen.dart';
+import 'providers/message_provider.dart';
+import 'providers/user_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MessageProvider()),
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -22,9 +34,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => WelcomeScreen(),
-        // '/home': (context) => HomeScreen(),
+        '/dashboard': (context) => DashboardScreen(),
         '/signup': (context) => SignUpScreen(),
         '/signin': (context) => SignInScreen(),
+        // Tambahkan route untuk screen lain jika ada
       },
     );
   }

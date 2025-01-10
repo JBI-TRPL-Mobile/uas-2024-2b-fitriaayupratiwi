@@ -15,11 +15,10 @@ class WelcomeScreen extends StatelessWidget {
             width: 250,
           ),
           SizedBox(height: 10),
-          Text('Selamat Datang!!!',
+          Text('Welcome',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
           SizedBox(height: 10),
-          Text(
-              'Silakan sign in untuk melanjutkan, dan sign up jika belum memiliki akun'),
+          Text('log in now to continue'),
           SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
