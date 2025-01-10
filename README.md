@@ -5,6 +5,9 @@ Kelas: 2B TRPL
 ![Halaman Utama](image.png)
 Tampilan ini menampilkan Pengguna akan disambut dengan gambar dan teks, lalu diberikan pilihan untuk masuk (sign in) atau membuat akun baru (sign up). Desain ini umum digunakan dalam banyak aplikasi untuk menyambut pengguna baru.
 
+![Sign In](image-6.png)
+Program ini adalah implementasi antarmuka Sign In Screen menggunakan framework Flutter. Fittur utama menampilkan input Email dan Password. Terjadi eror apabila belum mempunyai akun, maka kita buat terlebih dahulu pada Sign Up
+
 ![Sign Up](image-2.png)
 Tampilan Sign Up ini kita disuruh untuk mengisi nama, emai, password, dan juga konfirmasi password. Supaya dapat masuk kedalam dashboard.
 
