@@ -23,7 +23,6 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
-          // Penggunaan _buildCardWithTitle untuk setiap bagian
           _buildCardWithTitle(
             title: 'Video preference',
             children: [
@@ -33,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                   title: 'Video playback option', onTap: () {}),
             ],
           ),
-          SizedBox(height: 16), // Spasi antar Card
+          SizedBox(height: 16),
           _buildCardWithTitle(
             title: 'Account Settings',
             children: [
@@ -62,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(height: 32),
           Center(
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _showLogoutDialog(context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
                 foregroundColor: Colors.white,
@@ -79,7 +78,6 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  // Widget untuk membuat Card dengan judul (header)
   Widget _buildCardWithTitle(
       {required String title, required List<Widget> children}) {
     return Card(
@@ -125,6 +123,37 @@ class ProfileScreen extends StatelessWidget {
       indent: 16,
       endIndent: 16,
       color: Colors.grey[200],
+    );
+  }
+
+  void _showLogoutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Log Out'),
+          content: Text('Are you sure you want to log out?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Tutup dialog
+              },
+              child: Text('No'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Tutup dialog
+                // Tambahkan logika logout di sini
+                print('User logged out');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
+              child: Text('Yes'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
